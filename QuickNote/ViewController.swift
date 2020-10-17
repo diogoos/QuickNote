@@ -8,19 +8,25 @@
 import Cocoa
 
 class ViewController: NSViewController {
+    @IBOutlet var textView: NSTextView!
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    override func viewWillAppear() {
+        super.viewWillAppear()
 
-        // Do any additional setup after loading the view.
+        textView.font = .systemFont(ofSize: 17)
+        textView.delegate = self
+
+        populateDocumentContent()
     }
 
-    override var representedObject: Any? {
-        didSet {
-        // Update the view, if already loaded.
-        }
+    func populateDocumentContent() {
+        guard let content = representedObject as? QuickNote else { return }
+        textView.string = content.text
     }
-
-
 }
 
+extension ViewController: NSTextViewDelegate {
+    func textViewDidChangeSelection(_ notification: Notification) {
+        (representedObject as? QuickNote)?.text = textView.string
+    }
+}
