@@ -7,8 +7,15 @@
 
 import Cocoa
 
-class EditorViewController: NSViewController {
+class EditorViewController: NSViewController, Storyboarded {
     @IBOutlet var textView: NSTextView!
+    var changeCallback: ((String) -> Void)?
+
+    override var representedObject: Any? {
+        didSet {
+            populateDocumentContent()
+        }
+    }
 
     override func viewWillAppear() {
         super.viewWillAppear()
@@ -17,6 +24,10 @@ class EditorViewController: NSViewController {
         textView.delegate = self
 
         populateDocumentContent()
+    }
+
+    override func viewWillDisappear() {
+        textViewDidChangeSelection(Notification(name: Notification.Name("ViewWillChange")))
     }
 
     func populateDocumentContent() {
@@ -28,5 +39,6 @@ class EditorViewController: NSViewController {
 extension EditorViewController: NSTextViewDelegate {
     func textViewDidChangeSelection(_ notification: Notification) {
         (representedObject as? QuickNote)?.text = textView.string
+        changeCallback?(textView.string)
     }
 }

@@ -27,12 +27,14 @@ class Document: NSDocument {
     override class var autosavesInPlace: Bool { true }
 
     override func makeWindowControllers() {
-        // Returns the Storyboard that contains your Document window.
-        let storyboard = NSStoryboard(name: NSStoryboard.Name("Main"), bundle: nil)
-        let windowController = storyboard.instantiateController(withIdentifier: NSStoryboard.SceneIdentifier("Document Window Controller")) as! NSWindowController
+        let windowController = NSWindowController(window: NSWindow.standardWindow)
+        windowController.synchronizeWindowTitleWithDocumentName()
         self.addWindowController(windowController)
 
-        windowController.contentViewController?.representedObject = note
+        let coordinator = WindowCoordinator(windowController: windowController, representedObject: note)
+        coordinator.start()
+        (NSApp.delegate as! AppDelegate).editorItem.state = .on
+        (NSApp.delegate as! AppDelegate).coordinators.append(coordinator)
     }
 
     override func data(ofType typeName: String) throws -> Data {
