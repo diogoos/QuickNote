@@ -48,6 +48,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		FD0FB084253B2DCA00F12CA5 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				FDDA0DA6253A436F00EAC9B7 /* EditorViewController.swift */,
+				FD0FB076253AFBCF00F12CA5 /* ViewerViewController.swift */,
+				FD0FB07A253B076600F12CA5 /* SplitViewController.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		FDDA0D98253A436F00EAC9B7 = {
 			isa = PBXGroup;
 			children = (
@@ -67,13 +77,11 @@
 		FDDA0DA3253A436F00EAC9B7 /* QuickNote */ = {
 			isa = PBXGroup;
 			children = (
+				FD0FB084253B2DCA00F12CA5 /* Views */,
 				FDDA0DA4253A436F00EAC9B7 /* AppDelegate.swift */,
-				FDDA0DA6253A436F00EAC9B7 /* EditorViewController.swift */,
-				FD0FB076253AFBCF00F12CA5 /* ViewerViewController.swift */,
 				FDDA0DA8253A436F00EAC9B7 /* Document.swift */,
 				FDDA0DAA253A437000EAC9B7 /* Assets.xcassets */,
 				FDDA0DAC253A437000EAC9B7 /* Main.storyboard */,
-				FD0FB07A253B076600F12CA5 /* SplitViewController.swift */,
 				FDDA0DAF253A437000EAC9B7 /* Info.plist */,
 				FDDA0DB0253A437000EAC9B7 /* QuickNote.entitlements */,
 				FD0FB06C253AF6D700F12CA5 /* Coordinator.swift */,
