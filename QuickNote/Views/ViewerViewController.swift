@@ -21,12 +21,14 @@ class ViewerViewController: NSViewController, Storyboarded {
         textView.font = .systemFont(ofSize: 17)
         textView.textColor = .yellow
         textView.isEditable = false
+        textView.textContainerInset = NSMakeSize(10.0, 10.0)
 
         loadContent()
     }
 
     func loadContent() {
-        guard let content = representedObject as? QuickNote else { return }
-        textView.string = content.text
+        guard let note = representedObject as? QuickNote else { return }
+        let parser = Markdown(parsers: Markdown.defaultParsers)
+        textView.textStorage!.setAttributedString(parser.richText(from: note.text))
     }
 }

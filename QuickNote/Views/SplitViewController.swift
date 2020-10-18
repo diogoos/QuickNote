@@ -23,6 +23,7 @@ class SplitViewController: NSViewController, Storyboarded {
         viewerTextView.isEditable = false
         viewerTextView.textColor = .yellow
         viewerTextView.font = .systemFont(ofSize: 17)
+        viewerTextView.textContainerInset = NSMakeSize(10.0, 10.0)
 
         editorTextView.font = .systemFont(ofSize: 17)
         editorTextView.delegate = self
@@ -41,7 +42,11 @@ class SplitViewController: NSViewController, Storyboarded {
 
 extension SplitViewController: NSTextViewDelegate {
     func textViewDidChangeSelection(_ notification: Notification) {
-        viewerTextView.string = editorTextView.string
+        // parse markdown
+        let parser = Markdown(parsers: Markdown.defaultParsers)
+        viewerTextView.textStorage!.setAttributedString(parser.richText(from: editorTextView.string))
+
+        // save
         (representedObject as? QuickNote)?.text = editorTextView.string
     }
 }

@@ -21,6 +21,7 @@ class EditorViewController: NSViewController, Storyboarded {
         super.viewWillAppear()
 
         textView.font = .systemFont(ofSize: 17)
+        textView.allowsUndo = true
         textView.delegate = self
 
         populateDocumentContent()
