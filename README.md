@@ -34,6 +34,7 @@ Markdown is used a bit differently in QuickNote – not all features are impleme
 
 ## Installing
 > *Note*: Installing a compiled binary directly is not recommended, since this app is not code-signed. Proceed at your own risk.
+
 To install the app binary directly, download the latest release from [the Releases page](https://github.com/daemonleaf/QuickNote/releases), unzip the file, and move the app to the Applications directory, or wherever you see fit. Then, run the following commands in a terminal window:
 ```sh
 $ xattr -d com.apple.quarantine /Applications/QuickNote.app # remove from quarantine
