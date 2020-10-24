@@ -342,26 +342,22 @@
                                 <modifierMask key="keyEquivalentModifierMask"/>
                                 <menu key="submenu" title="View" id="HyV-fh-RgO">
                                     <items>
-                                        <menuItem title="Editor only" tag="12" id="hJF-0E-nCo">
-                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                        <menuItem title="Editor only" tag="12" keyEquivalent="1" id="hJF-0E-nCo">
                                             <connections>
                                                 <action selector="requestViewWithSender:" target="Voe-Tx-rLC" id="SgC-W2-HEB"/>
                                             </connections>
                                         </menuItem>
-                                        <menuItem title="Viewer only" tag="13" id="H14-EX-hrm">
-                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                        <menuItem title="Viewer only" tag="13" keyEquivalent="2" id="H14-EX-hrm">
                                             <connections>
                                                 <action selector="requestViewWithSender:" target="Voe-Tx-rLC" id="r70-Dh-3zv"/>
                                             </connections>
                                         </menuItem>
-                                        <menuItem title="Split view" tag="14" id="hVi-Jb-NNV">
-                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                        <menuItem title="Split view" tag="14" keyEquivalent="3" id="hVi-Jb-NNV">
                                             <connections>
                                                 <action selector="requestViewWithSender:" target="Voe-Tx-rLC" id="o9M-AN-P61"/>
                                             </connections>
                                         </menuItem>
-                                        <menuItem title="Separate windows" tag="15" id="rY4-DQ-5aN">
-                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                        <menuItem title="Separate windows" tag="15" keyEquivalent="4" id="rY4-DQ-5aN">
                                             <connections>
                                                 <action selector="requestViewWithSender:" target="Voe-Tx-rLC" id="UJI-di-Rl1"/>
                                             </connections>

@@ -54,6 +54,6 @@ struct Markdown {
 
         parsers.forEach { richText = $0.whole(richText) }
 
-        return NSAttributedString(attributedString: richText)
+        return richText as NSAttributedString
     }
 }

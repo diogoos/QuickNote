@@ -20,7 +20,7 @@ struct MarkdownTextStyleMatchers {
                                            attributes: [.font: NSFont.boldSystemFont(ofSize: 14)])
 
     static let italicText = TextStyleMatcher(regexString: "\\*(.*?)\\*",
-                                             regexOptions: .dotMatchesLineSeparators,
+//                                             regexOptions: .dotMatchesLineSeparators,
                                              delimiter: "*",
                                              attributes: [.font: NSFont.italicSystemFont(ofSize: 14)])
 

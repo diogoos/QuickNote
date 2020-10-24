@@ -39,18 +39,23 @@ struct HeaderParser: MarkdownParser {
 
         if charIndex > 6 { return nil } // nothing beyond h6 exists
 
+        // if the are no spaces after #, don't make it a header
+        let indexAfterPound = line.index(line.startIndex, offsetBy: charIndex)
+        if line[indexAfterPound] != " " { return nil }
+
         // remove leading #s from string
         let startIndex = line.index(line.startIndex, offsetBy: charIndex+1)
         let value = String(line[startIndex..<line.endIndex])
 
         // convert into rich text
         let result = NSMutableAttributedString(string: value, attributes: [
-            NSAttributedString.Key.font: NSFont.boldSystemFont(ofSize: fontSize(level: charIndex))
+            .font: NSFont.boldSystemFont(ofSize: fontSize(level: charIndex))
         ])
-        if charIndex < 3 {
-            result.append(ThematicBreakAttachment)
-        }
-        return NSAttributedString(attributedString: result)
+
+        // add a line below if less than h3
+        if charIndex < 3 { result.append(ThematicBreakAttachment) }
+
+        return result as NSAttributedString
     }
 
     func whole(_ richText: NSMutableAttributedString) -> NSMutableAttributedString {

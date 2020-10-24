@@ -34,12 +34,11 @@ class ThematicBreakAttachmentCell: NSTextAttachmentCell {
     }
 
     override func draw(withFrame cellFrame: NSRect, in controlView: NSView?) {
-        NSColor.white.withAlphaComponent(0.5).set()
+        NSColor.textColor.withAlphaComponent(0.5).set()
 
-        var widthFrame = NSInsetRect(cellFrame, 2, 0)
+        var widthFrame = NSInsetRect(cellFrame, 0, 0)
         widthFrame.origin.y += 15/2
         widthFrame.size.height = 1.5
-//        widthFrame.size.width -= 30
 
         widthFrame.fill()
     }
