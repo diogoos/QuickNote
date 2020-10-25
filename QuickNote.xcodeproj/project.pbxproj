@@ -13,6 +13,7 @@
 		FD0FB077253AFBCF00F12CA5 /* ViewerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD0FB076253AFBCF00F12CA5 /* ViewerViewController.swift */; };
 		FD0FB07B253B076600F12CA5 /* SplitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD0FB07A253B076600F12CA5 /* SplitViewController.swift */; };
 		FD0FB082253B0FDF00F12CA5 /* NSWindow+Standard.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD0FB081253B0FDF00F12CA5 /* NSWindow+Standard.swift */; };
+		FD2C1D5E25448BCF00566A1B /* NSRegularExpression+StaticString.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD2C1D5D25448BCF00566A1B /* NSRegularExpression+StaticString.swift */; };
 		FD514682253B924100450AE5 /* Markdown.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD514681253B924100450AE5 /* Markdown.swift */; };
 		FD514685253B936F00450AE5 /* HeaderParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD514684253B936F00450AE5 /* HeaderParser.swift */; };
 		FD514688253B975A00450AE5 /* TextColorFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD514687253B975A00450AE5 /* TextColorFormatter.swift */; };
@@ -39,6 +40,7 @@
 		FD0FB076253AFBCF00F12CA5 /* ViewerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewerViewController.swift; sourceTree = "<group>"; };
 		FD0FB07A253B076600F12CA5 /* SplitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplitViewController.swift; sourceTree = "<group>"; };
 		FD0FB081253B0FDF00F12CA5 /* NSWindow+Standard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSWindow+Standard.swift"; sourceTree = "<group>"; };
+		FD2C1D5D25448BCF00566A1B /* NSRegularExpression+StaticString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSRegularExpression+StaticString.swift"; sourceTree = "<group>"; };
 		FD514681253B924100450AE5 /* Markdown.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Markdown.swift; sourceTree = "<group>"; };
 		FD514684253B936F00450AE5 /* HeaderParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderParser.swift; sourceTree = "<group>"; };
 		FD514687253B975A00450AE5 /* TextColorFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextColorFormatter.swift; sourceTree = "<group>"; };
@@ -105,6 +107,7 @@
 			children = (
 				FD0FB081253B0FDF00F12CA5 /* NSWindow+Standard.swift */,
 				FDD14747253CF55D00E1A964 /* NSColor+systemFont.swift */,
+				FD2C1D5D25448BCF00566A1B /* NSRegularExpression+StaticString.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -151,6 +154,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = FDDA0DB3253A437000EAC9B7 /* Build configuration list for PBXNativeTarget "QuickNote" */;
 			buildPhases = (
+				FD2C1D5B25448B5E00566A1B /* ShellScript */,
 				FDDA0D9D253A436F00EAC9B7 /* Sources */,
 				FDDA0D9E253A436F00EAC9B7 /* Frameworks */,
 				FDDA0D9F253A436F00EAC9B7 /* Resources */,
@@ -208,6 +212,26 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		FD2C1D5B25448B5E00566A1B /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		FDDA0D9D253A436F00EAC9B7 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -229,6 +253,7 @@
 				FD6E8D12253C792C00CC99CB /* LinkParser.swift in Sources */,
 				FD83BD93253CA73F00000CD3 /* CodeBlockParser.swift in Sources */,
 				FD0FB073253AF78400F12CA5 /* Storyboarded.swift in Sources */,
+				FD2C1D5E25448BCF00566A1B /* NSRegularExpression+StaticString.swift in Sources */,
 				FD51468B253B98AB00450AE5 /* BodyParser.swift in Sources */,
 				FDD1474B253CF71C00E1A964 /* TextStyleMatcher.swift in Sources */,
 				FD0FB07B253B076600F12CA5 /* SplitViewController.swift in Sources */,
