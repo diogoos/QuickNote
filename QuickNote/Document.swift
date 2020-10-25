@@ -7,7 +7,6 @@
 
 import Cocoa
 
-
 class QuickNote: Codable {
     var text: String
 
@@ -19,7 +18,6 @@ class QuickNote: Codable {
         self.init(text: "")
     }
 }
-
 
 class Document: NSDocument {
     var note = QuickNote()
@@ -33,8 +31,11 @@ class Document: NSDocument {
 
         let coordinator = WindowCoordinator(windowController: windowController, representedObject: note)
         coordinator.start()
+
+        // swiftlint:disable force_cast
         (NSApp.delegate as! AppDelegate).editorItem.state = .on
         (NSApp.delegate as! AppDelegate).coordinators.append(coordinator)
+        // swiftlint:enable force_cast
     }
 
     override func data(ofType typeName: String) throws -> Data {

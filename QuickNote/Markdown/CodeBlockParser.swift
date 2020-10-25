@@ -8,7 +8,7 @@
 import Cocoa
 
 struct CodeBlockParser: MarkdownParser {
-    static let blockRegex = try! NSRegularExpression(pattern: "```(.*?)\n(.*?)```", options: .dotMatchesLineSeparators)
+    static let blockRegex = NSRegularExpression(staticPattern: "```(.*?)\n(.*?)```", options: .dotMatchesLineSeparators)
 
     func line(_ line: String) -> NSAttributedString? { nil }
 
@@ -17,7 +17,7 @@ struct CodeBlockParser: MarkdownParser {
                                               options: [],
                                               range: NSRange(location: 0, length: richText.string.utf16.count))
 
-        let original = richText.string.copy() as! NSString
+        let original = richText.string.copy() as! NSString // swiftlint:disable:this force_cast
 
         var deviation: Int = 0
         for match in matches {
@@ -29,7 +29,7 @@ struct CodeBlockParser: MarkdownParser {
             let codeString = original.substring(with: match.range(at: 2))
 
             // make updated range
-            let updatedRange = NSMakeRange(match.range.location - deviation, match.range.length)
+            let updatedRange = NSRange(location: match.range.location - deviation, length: match.range.length)
 
             // add attributes
             richText.addAttributes([
@@ -41,7 +41,6 @@ struct CodeBlockParser: MarkdownParser {
             // add deviation
             deviation += matchString.count - codeString.count
         }
-
 
         return richText
     }

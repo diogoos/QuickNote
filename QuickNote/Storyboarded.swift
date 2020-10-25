@@ -23,6 +23,11 @@ extension Storyboarded where Self: NSViewController {
         let storyboard = NSStoryboard(name: NSStoryboard.Name("Main"), bundle: nil)
 
         // instantiate a view controller with that identifier, and force cast as the type that was requested
-        return storyboard.instantiateController(withIdentifier: NSStoryboard.SceneIdentifier(className)) as! Self
+        let identifier = NSStoryboard.SceneIdentifier(className)
+        if let controller = storyboard.instantiateController(withIdentifier: identifier) as? Self {
+            return controller
+        } else {
+            fatalError("View controller with identifier '\(className)' was not found in bundle.")
+        }
     }
 }

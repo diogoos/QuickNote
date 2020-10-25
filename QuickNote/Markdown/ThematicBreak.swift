@@ -22,6 +22,7 @@ struct ThematicBreakParser: MarkdownParser {
     }
 }
 
+// swiftlint:disable:next identifier_name
 let ThematicBreakAttachment: NSAttributedString = {
     let textAttachment = NSTextAttachment()
     textAttachment.attachmentCell = ThematicBreakAttachmentCell()
@@ -29,18 +30,19 @@ let ThematicBreakAttachment: NSAttributedString = {
 }()
 
 class ThematicBreakAttachmentCell: NSTextAttachmentCell {
-    override func cellFrame(for textContainer: NSTextContainer, proposedLineFragment lineFrag: NSRect, glyphPosition position: NSPoint, characterIndex charIndex: Int) -> NSRect {
-        return NSMakeRect(0, 0, lineFrag.size.width, 15)
+    override func cellFrame(for textContainer: NSTextContainer,
+                            proposedLineFragment lineFrag: NSRect,
+                            glyphPosition position: NSPoint,
+                            characterIndex charIndex: Int) -> NSRect {
+        NSRect(x: 0, y: 0, width: lineFrag.size.width, height: 15)
     }
 
     override func draw(withFrame cellFrame: NSRect, in controlView: NSView?) {
         NSColor.textColor.withAlphaComponent(0.5).set()
 
-        var widthFrame = NSInsetRect(cellFrame, 0, 0)
+        var widthFrame = cellFrame.insetBy(dx: 0, dy: 0)
         widthFrame.origin.y += 15/2
         widthFrame.size.height = 1.5
-
         widthFrame.fill()
     }
 }
-

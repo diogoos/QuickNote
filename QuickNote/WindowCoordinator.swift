@@ -20,8 +20,8 @@ class WindowCoordinator: Coordinator {
     func
 
     start<T: NSViewController & Storyboarded>(_ controller: T.Type) {
-        let vc = controller.instantiate()
-        windowController.contentViewController = vc
+        let viewController = controller.instantiate()
+        windowController.contentViewController = viewController
         windowController.contentViewController?.representedObject = representedObject
     }
 
@@ -54,7 +54,8 @@ class WindowCoordinator: Coordinator {
                 pWindow.close()
             }
         }
-        
+
+        // swiftlint:disable:next force_cast
         (NSApp.delegate as! AppDelegate).coordinators.remove(at: windowCoordinatorIndex)
     }
 }

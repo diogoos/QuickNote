@@ -23,7 +23,7 @@ class SplitViewController: NSViewController, Storyboarded {
         viewerTextView.isEditable = false
         viewerTextView.textColor = .yellow
         viewerTextView.font = .systemFont(ofSize: 17)
-        viewerTextView.textContainerInset = NSMakeSize(10.0, 10.0)
+        viewerTextView.textContainerInset = NSSize(width: 10.0, height: 10.0)
 
         editorTextView.font = .systemFont(ofSize: 17)
         editorTextView.delegate = self

@@ -9,7 +9,7 @@ import Cocoa
 
 class ViewerViewController: NSViewController, Storyboarded {
     @IBOutlet var textView: NSTextView!
-    var owner: Int? = nil
+    var owner: Int?
 
     override var representedObject: Any? {
         didSet {
@@ -21,7 +21,7 @@ class ViewerViewController: NSViewController, Storyboarded {
         textView.font = .systemFont(ofSize: 17)
         textView.textColor = .yellow
         textView.isEditable = false
-        textView.textContainerInset = NSMakeSize(10.0, 10.0)
+        textView.textContainerInset = NSSize(width: 10.0, height: 10.0)
 
         loadContent()
     }

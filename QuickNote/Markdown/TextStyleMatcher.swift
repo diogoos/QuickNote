@@ -8,12 +8,12 @@
 import Foundation
 
 struct TextStyleMatcher {
-    let regexString: String
+    let regexString: StaticString
     let regexOptions: NSRegularExpression.Options
     let delimiter: String
     let attributes: [NSAttributedString.Key: Any]
 
-    init(regexString: String,
+    init(regexString: StaticString,
          regexOptions: NSRegularExpression.Options = [],
          delimiter: String,
          attributes: [NSAttributedString.Key: Any]) {
@@ -23,7 +23,7 @@ struct TextStyleMatcher {
         self.attributes = attributes
     }
 
-    var regex: NSRegularExpression { try! NSRegularExpression(pattern: regexString, options: regexOptions) }
+    var regex: NSRegularExpression { NSRegularExpression(staticPattern: regexString, options: regexOptions) }
 
     func match(in text: NSMutableAttributedString) -> NSMutableAttributedString {
         let matchRanges = regex.matches(in: text.string,

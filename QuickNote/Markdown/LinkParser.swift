@@ -8,11 +8,11 @@
 import Foundation
 
 struct LinkParser: IncrementalMarkdownParser {
-    static let regex = try! NSRegularExpression(pattern: "\\[(.*?)\\]\\((.*?)\\)", options: [])
+    static let regex = NSRegularExpression(staticPattern: "\\[(.*?)\\]\\((.*?)\\)", options: [])
 
     func attributedLine(_ line: NSMutableAttributedString) -> NSMutableAttributedString {
         // we need to keep a copy of the original line, to match later
-        let original: NSString = (line.string as NSString).copy() as! NSString
+        let original: NSString = line.string.copy() as! NSString // swiftlint:disable:this force_cast
 
         // find the maches in the lines
         let matches = LinkParser.regex.matches(in: line.string,
@@ -32,7 +32,7 @@ struct LinkParser: IncrementalMarkdownParser {
             // record the number of characters to the left
             // that the text shifted, so we can "undo"
             // this the next time the loop is run.
-            let updatedRange = NSMakeRange(match.range.location - locationCharShift, match.range.length)
+            let updatedRange = NSRange(location: match.range.location - locationCharShift, length: match.range.length)
             locationCharShift += instance.count - title.count
 
             // add link, then remove brackets and url

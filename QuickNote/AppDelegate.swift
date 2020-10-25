@@ -18,8 +18,13 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     @IBOutlet var splitItem: NSMenuItem!
     @IBOutlet var separateItem: NSMenuItem!
 
+    var notificationObserver: NSObjectProtocol?
+
     func applicationDidFinishLaunching(_ aNotification: Notification) {
-        NotificationCenter.default.addObserver(forName: NSWindow.willCloseNotification, object: nil, queue: nil, using: WindowCoordinator.detachWindow(from:))
+        notificationObserver = NotificationCenter.default.addObserver(forName: NSWindow.willCloseNotification,
+                                                                      object: nil,
+                                                                      queue: nil,
+                                                                      using: WindowCoordinator.detachWindow(from:))
 
         viewMenu.delegate = self
     }
@@ -27,8 +32,6 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     func applicationWillTerminate(_ aNotification: Notification) {
         // Insert code here to tear down your application
     }
-
-    
 
     @IBAction func requestView(sender: NSMenuItem) {
         switch sender.title {
@@ -60,12 +63,21 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
 
     func instantiateSeparateWindows() {
-        // make the current view an editor
+        // grab the current window & its coordinator
         guard let keyWindow = NSApp.keyWindow else { return }
-        guard let coordinator = coordinators.forWindow(keyWindow) else {
-            NSApp.keyWindow?.close()
+        guard let coordinator = coordinators.forWindow(keyWindow) else { return }
+
+        // make sure that there isn't already a separate window
+        let ownedWindows = previewWindows.filter({
+            let owner = ($0.contentViewController as? ViewerViewController)?.owner
+            return owner == keyWindow.identifier.hashValue
+        })
+        if ownedWindows.count > 0 {
+            ownedWindows.first?.makeKeyAndOrderFront(self)
             return
         }
+
+        // make the current view an editor
         coordinator.start(EditorViewController.self)
 
         // create a window
@@ -74,23 +86,23 @@ class AppDelegate: NSObject, NSApplicationDelegate {
                               styleMask: [.titled, .resizable, .closable, .miniaturizable],
                               backing: .buffered,
                               defer: true)
-        window.title = "Preview for \(keyWindow.representedFilename.split(separator: "/").last ?? "Untitled")"
+
+        window.title = "Preview for \(keyWindow.representedURL?.lastPathComponent ?? "Untitled")"
         window.makeKeyAndOrderFront(nil)
         window.isReleasedWhenClosed = false
 
         window.contentViewController = ViewerViewController.instantiate()
         window.contentViewController?.representedObject = keyWindow.contentViewController?.representedObject
-        (window.contentViewController as! ViewerViewController).owner = keyWindow.identifier.hashValue
+        (window.contentViewController as? ViewerViewController)?.owner = keyWindow.identifier.hashValue
 
         // sync the contents of both windows
-        (coordinator.windowController.contentViewController as! EditorViewController).changeCallback = {
+        (coordinator.windowController.contentViewController as? EditorViewController)?.changeCallback = {
             window.contentViewController?.representedObject = QuickNote(text: $0)
         }
 
         previewWindows.append(window)
     }
 }
-
 
 extension AppDelegate: NSMenuDelegate {
     func menuWillOpen(_ menu: NSMenu) {
