@@ -1,5 +1,5 @@
 //
-//  NSColor+systemFont.swift
+//  NSFont+systemFont.swift
 //  QuickNote
 //
 //  Created by Diogo Silva on 10/18/20.

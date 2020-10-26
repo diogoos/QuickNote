@@ -23,7 +23,7 @@
 		FD6E8D12253C792C00CC99CB /* LinkParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6E8D11253C792C00CC99CB /* LinkParser.swift */; };
 		FD83BD90253CA0A600000CD3 /* ListParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD83BD8F253CA0A600000CD3 /* ListParser.swift */; };
 		FD83BD93253CA73F00000CD3 /* CodeBlockParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD83BD92253CA73F00000CD3 /* CodeBlockParser.swift */; };
-		FDD14748253CF55D00E1A964 /* NSColor+systemFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDD14747253CF55D00E1A964 /* NSColor+systemFont.swift */; };
+		FDD14748253CF55D00E1A964 /* NSFont+systemFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDD14747253CF55D00E1A964 /* NSFont+systemFont.swift */; };
 		FDD1474B253CF71C00E1A964 /* TextStyleMatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDD1474A253CF71C00E1A964 /* TextStyleMatcher.swift */; };
 		FDD1474F253CF76600E1A964 /* MarkdownTextStyleMatchers.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDD1474E253CF76600E1A964 /* MarkdownTextStyleMatchers.swift */; };
 		FDDA0DA5253A436F00EAC9B7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDDA0DA4253A436F00EAC9B7 /* AppDelegate.swift */; };
@@ -50,7 +50,7 @@
 		FD6E8D11253C792C00CC99CB /* LinkParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkParser.swift; sourceTree = "<group>"; };
 		FD83BD8F253CA0A600000CD3 /* ListParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListParser.swift; sourceTree = "<group>"; };
 		FD83BD92253CA73F00000CD3 /* CodeBlockParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeBlockParser.swift; sourceTree = "<group>"; };
-		FDD14747253CF55D00E1A964 /* NSColor+systemFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSColor+systemFont.swift"; sourceTree = "<group>"; };
+		FDD14747253CF55D00E1A964 /* NSFont+systemFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSFont+systemFont.swift"; sourceTree = "<group>"; };
 		FDD1474A253CF71C00E1A964 /* TextStyleMatcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextStyleMatcher.swift; sourceTree = "<group>"; };
 		FDD1474E253CF76600E1A964 /* MarkdownTextStyleMatchers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarkdownTextStyleMatchers.swift; sourceTree = "<group>"; };
 		FDDA0DA1253A436F00EAC9B7 /* QuickNote.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QuickNote.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -106,7 +106,7 @@
 			isa = PBXGroup;
 			children = (
 				FD0FB081253B0FDF00F12CA5 /* NSWindow+Standard.swift */,
-				FDD14747253CF55D00E1A964 /* NSColor+systemFont.swift */,
+				FDD14747253CF55D00E1A964 /* NSFont+systemFont.swift */,
 				FD2C1D5D25448BCF00566A1B /* NSRegularExpression+StaticString.swift */,
 			);
 			path = Extensions;
@@ -257,7 +257,7 @@
 				FD51468B253B98AB00450AE5 /* BodyParser.swift in Sources */,
 				FDD1474B253CF71C00E1A964 /* TextStyleMatcher.swift in Sources */,
 				FD0FB07B253B076600F12CA5 /* SplitViewController.swift in Sources */,
-				FDD14748253CF55D00E1A964 /* NSColor+systemFont.swift in Sources */,
+				FDD14748253CF55D00E1A964 /* NSFont+systemFont.swift in Sources */,
 				FD514682253B924100450AE5 /* Markdown.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
