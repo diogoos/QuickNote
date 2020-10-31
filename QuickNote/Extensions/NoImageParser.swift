@@ -1,23 +1,24 @@
 //
-//  LinkParser.swift
+//  NoImageParser.swift
 //  QuickNote
 //
-//  Created by Diogo Silva on 10/18/20.
+//  Created by Diogo Silva on 10/31/20.
 //
 
 import Foundation
+import MarkParse
 
-struct LinkParser: IncrementalMarkdownParser {
-    static let regex = NSRegularExpression(staticPattern: "\\[(.*?)\\]\\((.*?)\\)", options: [])
+struct NoImageParser: MarkdownParser {
+    static let regex = NSRegularExpression(staticPattern: "!\\[(.*?)\\]\\((.*?)\\)", options: [])
 
-    func attributedLine(_ line: NSMutableAttributedString) -> NSMutableAttributedString {
+    func modify(line: NSMutableAttributedString) -> NSMutableAttributedString? {
         // we need to keep a copy of the original line, to match later
         let original: NSString = line.string.copy() as! NSString // swiftlint:disable:this force_cast
 
         // find the maches in the lines
-        let matches = LinkParser.regex.matches(in: line.string,
-                                               options: [],
-                                               range: NSRange(location: 0, length: line.string.utf16.count))
+        let matches = Self.regex.matches(in: line.string,
+                                             options: [],
+                                             range: NSRange(location: 0, length: line.string.utf16.count))
 
         var locationCharShift: Int = 0
         for match in matches {
@@ -39,10 +40,7 @@ struct LinkParser: IncrementalMarkdownParser {
             line.addAttributes([.link: link], range: updatedRange)
             line.replaceCharacters(in: updatedRange, with: title)
         }
+
         return line
     }
-
-    func line(_ line: String) -> NSAttributedString? { nil }
-
-    func whole(_ richText: NSMutableAttributedString) -> NSMutableAttributedString { richText }
 }

@@ -13,25 +13,40 @@
 		FD0FB077253AFBCF00F12CA5 /* ViewerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD0FB076253AFBCF00F12CA5 /* ViewerViewController.swift */; };
 		FD0FB07B253B076600F12CA5 /* SplitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD0FB07A253B076600F12CA5 /* SplitViewController.swift */; };
 		FD0FB082253B0FDF00F12CA5 /* NSWindow+Standard.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD0FB081253B0FDF00F12CA5 /* NSWindow+Standard.swift */; };
-		FD2C1D5E25448BCF00566A1B /* NSRegularExpression+StaticString.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD2C1D5D25448BCF00566A1B /* NSRegularExpression+StaticString.swift */; };
-		FD514682253B924100450AE5 /* Markdown.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD514681253B924100450AE5 /* Markdown.swift */; };
-		FD514685253B936F00450AE5 /* HeaderParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD514684253B936F00450AE5 /* HeaderParser.swift */; };
-		FD514688253B975A00450AE5 /* TextColorFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD514687253B975A00450AE5 /* TextColorFormatter.swift */; };
-		FD51468B253B98AB00450AE5 /* BodyParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD51468A253B98AB00450AE5 /* BodyParser.swift */; };
-		FD514690253BA56500450AE5 /* ThematicBreak.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD51468F253BA56500450AE5 /* ThematicBreak.swift */; };
-		FD514693253BB12B00450AE5 /* TextStyleParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD514692253BB12B00450AE5 /* TextStyleParser.swift */; };
-		FD6E8D12253C792C00CC99CB /* LinkParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6E8D11253C792C00CC99CB /* LinkParser.swift */; };
-		FD83BD90253CA0A600000CD3 /* ListParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD83BD8F253CA0A600000CD3 /* ListParser.swift */; };
-		FD83BD93253CA73F00000CD3 /* CodeBlockParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD83BD92253CA73F00000CD3 /* CodeBlockParser.swift */; };
-		FDD14748253CF55D00E1A964 /* NSFont+systemFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDD14747253CF55D00E1A964 /* NSFont+systemFont.swift */; };
-		FDD1474B253CF71C00E1A964 /* TextStyleMatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDD1474A253CF71C00E1A964 /* TextStyleMatcher.swift */; };
-		FDD1474F253CF76600E1A964 /* MarkdownTextStyleMatchers.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDD1474E253CF76600E1A964 /* MarkdownTextStyleMatchers.swift */; };
+		FD932BD62548D10A00AECC7E /* MarkParse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD932BD32548D0E900AECC7E /* MarkParse.framework */; };
+		FD932BD72548D10A00AECC7E /* MarkParse.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = FD932BD32548D0E900AECC7E /* MarkParse.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		FDA9C9EA254D77A800050C0C /* NoImageParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDA9C9E9254D77A800050C0C /* NoImageParser.swift */; };
+		FDA9C9ED254D782600050C0C /* NSRegularExpression.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDA9C9EC254D782600050C0C /* NSRegularExpression.swift */; };
 		FDDA0DA5253A436F00EAC9B7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDDA0DA4253A436F00EAC9B7 /* AppDelegate.swift */; };
 		FDDA0DA7253A436F00EAC9B7 /* EditorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDDA0DA6253A436F00EAC9B7 /* EditorViewController.swift */; };
 		FDDA0DA9253A436F00EAC9B7 /* Document.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDDA0DA8253A436F00EAC9B7 /* Document.swift */; };
 		FDDA0DAB253A437000EAC9B7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FDDA0DAA253A437000EAC9B7 /* Assets.xcassets */; };
 		FDDA0DAE253A437000EAC9B7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FDDA0DAC253A437000EAC9B7 /* Main.storyboard */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		FD932BD22548D0E900AECC7E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FD932BCE2548D0E900AECC7E /* MarkParse.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = FD2FB9312545C723004ED532;
+			remoteInfo = MarkParse;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		FD2FB9902546EA9E004ED532 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				FD932BD72548D10A00AECC7E /* MarkParse.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		FD0FB06C253AF6D700F12CA5 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
@@ -40,19 +55,9 @@
 		FD0FB076253AFBCF00F12CA5 /* ViewerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewerViewController.swift; sourceTree = "<group>"; };
 		FD0FB07A253B076600F12CA5 /* SplitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplitViewController.swift; sourceTree = "<group>"; };
 		FD0FB081253B0FDF00F12CA5 /* NSWindow+Standard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSWindow+Standard.swift"; sourceTree = "<group>"; };
-		FD2C1D5D25448BCF00566A1B /* NSRegularExpression+StaticString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSRegularExpression+StaticString.swift"; sourceTree = "<group>"; };
-		FD514681253B924100450AE5 /* Markdown.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Markdown.swift; sourceTree = "<group>"; };
-		FD514684253B936F00450AE5 /* HeaderParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderParser.swift; sourceTree = "<group>"; };
-		FD514687253B975A00450AE5 /* TextColorFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextColorFormatter.swift; sourceTree = "<group>"; };
-		FD51468A253B98AB00450AE5 /* BodyParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BodyParser.swift; sourceTree = "<group>"; };
-		FD51468F253BA56500450AE5 /* ThematicBreak.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThematicBreak.swift; sourceTree = "<group>"; };
-		FD514692253BB12B00450AE5 /* TextStyleParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextStyleParser.swift; sourceTree = "<group>"; };
-		FD6E8D11253C792C00CC99CB /* LinkParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkParser.swift; sourceTree = "<group>"; };
-		FD83BD8F253CA0A600000CD3 /* ListParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListParser.swift; sourceTree = "<group>"; };
-		FD83BD92253CA73F00000CD3 /* CodeBlockParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeBlockParser.swift; sourceTree = "<group>"; };
-		FDD14747253CF55D00E1A964 /* NSFont+systemFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSFont+systemFont.swift"; sourceTree = "<group>"; };
-		FDD1474A253CF71C00E1A964 /* TextStyleMatcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextStyleMatcher.swift; sourceTree = "<group>"; };
-		FDD1474E253CF76600E1A964 /* MarkdownTextStyleMatchers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarkdownTextStyleMatchers.swift; sourceTree = "<group>"; };
+		FD932BCE2548D0E900AECC7E /* MarkParse.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = MarkParse.xcodeproj; path = ../../MarkParse/MarkParse.xcodeproj; sourceTree = "<group>"; };
+		FDA9C9E9254D77A800050C0C /* NoImageParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoImageParser.swift; sourceTree = "<group>"; };
+		FDA9C9EC254D782600050C0C /* NSRegularExpression.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSRegularExpression.swift; sourceTree = "<group>"; };
 		FDDA0DA1253A436F00EAC9B7 /* QuickNote.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QuickNote.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FDDA0DA4253A436F00EAC9B7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FDDA0DA6253A436F00EAC9B7 /* EditorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditorViewController.swift; sourceTree = "<group>"; };
@@ -68,6 +73,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FD932BD62548D10A00AECC7E /* MarkParse.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -84,32 +90,29 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
-		FD51465A253B44E400450AE5 /* Markdown */ = {
-			isa = PBXGroup;
-			children = (
-				FD514681253B924100450AE5 /* Markdown.swift */,
-				FD514684253B936F00450AE5 /* HeaderParser.swift */,
-				FD514687253B975A00450AE5 /* TextColorFormatter.swift */,
-				FD51468A253B98AB00450AE5 /* BodyParser.swift */,
-				FD51468F253BA56500450AE5 /* ThematicBreak.swift */,
-				FD514692253BB12B00450AE5 /* TextStyleParser.swift */,
-				FDD1474A253CF71C00E1A964 /* TextStyleMatcher.swift */,
-				FDD1474E253CF76600E1A964 /* MarkdownTextStyleMatchers.swift */,
-				FD6E8D11253C792C00CC99CB /* LinkParser.swift */,
-				FD83BD8F253CA0A600000CD3 /* ListParser.swift */,
-				FD83BD92253CA73F00000CD3 /* CodeBlockParser.swift */,
-			);
-			path = Markdown;
-			sourceTree = "<group>";
-		};
 		FD51466C253B615D00450AE5 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
 				FD0FB081253B0FDF00F12CA5 /* NSWindow+Standard.swift */,
-				FDD14747253CF55D00E1A964 /* NSFont+systemFont.swift */,
-				FD2C1D5D25448BCF00566A1B /* NSRegularExpression+StaticString.swift */,
+				FDA9C9E9254D77A800050C0C /* NoImageParser.swift */,
+				FDA9C9EC254D782600050C0C /* NSRegularExpression.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		FD932BCF2548D0E900AECC7E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FD932BD32548D0E900AECC7E /* MarkParse.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		FD932BD52548D10A00AECC7E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		FDDA0D98253A436F00EAC9B7 = {
@@ -117,6 +120,7 @@
 			children = (
 				FDDA0DA3253A436F00EAC9B7 /* QuickNote */,
 				FDDA0DA2253A436F00EAC9B7 /* Products */,
+				FD932BD52548D10A00AECC7E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -131,8 +135,8 @@
 		FDDA0DA3253A436F00EAC9B7 /* QuickNote */ = {
 			isa = PBXGroup;
 			children = (
+				FD932BCE2548D0E900AECC7E /* MarkParse.xcodeproj */,
 				FD51466C253B615D00450AE5 /* Extensions */,
-				FD51465A253B44E400450AE5 /* Markdown */,
 				FD0FB084253B2DCA00F12CA5 /* Views */,
 				FDDA0DA4253A436F00EAC9B7 /* AppDelegate.swift */,
 				FDDA0DA8253A436F00EAC9B7 /* Document.swift */,
@@ -158,6 +162,7 @@
 				FDDA0D9D253A436F00EAC9B7 /* Sources */,
 				FDDA0D9E253A436F00EAC9B7 /* Frameworks */,
 				FDDA0D9F253A436F00EAC9B7 /* Resources */,
+				FD2FB9902546EA9E004ED532 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -193,12 +198,28 @@
 			mainGroup = FDDA0D98253A436F00EAC9B7;
 			productRefGroup = FDDA0DA2253A436F00EAC9B7 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = FD932BCF2548D0E900AECC7E /* Products */;
+					ProjectRef = FD932BCE2548D0E900AECC7E /* MarkParse.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				FDDA0DA0253A436F00EAC9B7 /* QuickNote */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		FD932BD32548D0E900AECC7E /* MarkParse.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = MarkParse.framework;
+			remoteRef = FD932BD22548D0E900AECC7E /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		FDDA0D9F253A436F00EAC9B7 /* Resources */ = {
@@ -237,28 +258,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FD83BD90253CA0A600000CD3 /* ListParser.swift in Sources */,
 				FD0FB06D253AF6D700F12CA5 /* Coordinator.swift in Sources */,
 				FD0FB077253AFBCF00F12CA5 /* ViewerViewController.swift in Sources */,
 				FDDA0DA7253A436F00EAC9B7 /* EditorViewController.swift in Sources */,
-				FD514693253BB12B00450AE5 /* TextStyleParser.swift in Sources */,
 				FD0FB070253AF75A00F12CA5 /* WindowCoordinator.swift in Sources */,
-				FDD1474F253CF76600E1A964 /* MarkdownTextStyleMatchers.swift in Sources */,
-				FD514690253BA56500450AE5 /* ThematicBreak.swift in Sources */,
-				FD514688253B975A00450AE5 /* TextColorFormatter.swift in Sources */,
+				FDA9C9ED254D782600050C0C /* NSRegularExpression.swift in Sources */,
 				FDDA0DA5253A436F00EAC9B7 /* AppDelegate.swift in Sources */,
 				FD0FB082253B0FDF00F12CA5 /* NSWindow+Standard.swift in Sources */,
 				FDDA0DA9253A436F00EAC9B7 /* Document.swift in Sources */,
-				FD514685253B936F00450AE5 /* HeaderParser.swift in Sources */,
-				FD6E8D12253C792C00CC99CB /* LinkParser.swift in Sources */,
-				FD83BD93253CA73F00000CD3 /* CodeBlockParser.swift in Sources */,
+				FDA9C9EA254D77A800050C0C /* NoImageParser.swift in Sources */,
 				FD0FB073253AF78400F12CA5 /* Storyboarded.swift in Sources */,
-				FD2C1D5E25448BCF00566A1B /* NSRegularExpression+StaticString.swift in Sources */,
-				FD51468B253B98AB00450AE5 /* BodyParser.swift in Sources */,
-				FDD1474B253CF71C00E1A964 /* TextStyleMatcher.swift in Sources */,
 				FD0FB07B253B076600F12CA5 /* SplitViewController.swift in Sources */,
-				FDD14748253CF55D00E1A964 /* NSFont+systemFont.swift in Sources */,
-				FD514682253B924100450AE5 /* Markdown.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -399,6 +409,10 @@
 				CODE_SIGN_ENTITLEMENTS = QuickNote/QuickNote.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/QuickNote",
+				);
 				INFOPLIST_FILE = QuickNote/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -418,6 +432,10 @@
 				CODE_SIGN_ENTITLEMENTS = QuickNote/QuickNote.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/QuickNote",
+				);
 				INFOPLIST_FILE = QuickNote/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

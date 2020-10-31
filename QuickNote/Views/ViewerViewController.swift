@@ -6,6 +6,7 @@
 //
 
 import Cocoa
+import MarkParse
 
 class ViewerViewController: NSViewController, Storyboarded {
     @IBOutlet var textView: NSTextView!
@@ -28,7 +29,11 @@ class ViewerViewController: NSViewController, Storyboarded {
 
     func loadContent() {
         guard let note = representedObject as? QuickNote else { return }
-        let parser = Markdown(parsers: Markdown.defaultParsers)
-        textView.textStorage!.setAttributedString(parser.richText(from: note.text))
+
+        var parsers = MarkdownRenderer.defaultParsers
+        parsers.insert(NoImageParser(), at: 2)
+
+        let parser = MarkdownRenderer(parsers: parsers)
+        textView.textStorage!.setAttributedString(parser.attributedString(from: note.text))
     }
 }

@@ -6,10 +6,12 @@
 //
 
 import Cocoa
+import MarkParse
 
 class SplitViewController: NSViewController, Storyboarded {
     @IBOutlet var editorTextView: NSTextView!
     @IBOutlet var viewerTextView: NSTextView!
+    var viewerText: String = ""
 
     override var representedObject: Any? {
         didSet {
@@ -42,9 +44,15 @@ class SplitViewController: NSViewController, Storyboarded {
 
 extension SplitViewController: NSTextViewDelegate {
     func textViewDidChangeSelection(_ notification: Notification) {
-        // parse markdown
-        let parser = Markdown(parsers: Markdown.defaultParsers)
-        viewerTextView.textStorage!.setAttributedString(parser.richText(from: editorTextView.string))
+        // parse markdown only if the text has changed
+        if viewerText != editorTextView.string {
+            var parsers = MarkdownRenderer.defaultParsers
+            parsers.insert(NoImageParser(), at: 2)
+
+            let renderer = MarkdownRenderer(parsers: parsers)
+            viewerTextView.textStorage!.setAttributedString(renderer.attributedString(from: editorTextView.string))
+            viewerText = editorTextView.string
+        }
 
         // save
         (representedObject as? QuickNote)?.text = editorTextView.string
