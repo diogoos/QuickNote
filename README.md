@@ -1,10 +1,12 @@
 # QuickNote
-A fast, simple, light-weight markdown editor under 200kb.
+A fast, simple, light-weight markdown editor under 1mb.
 
 ## About
-Notes are awesome pieces of information, essential to our daily lives. It is important that taking notes is fast and easy. Simple .txts are great for this; however, sometimes it's useful to have some more formatting and a prettier interface. Markdown is a great solution. This app is really meant to be simple markdown editor; it has objectively less features than other programs on purpose. It is supposed to be light-weight, and really fast. It weighs in under 200 kilobytes. There's no Electron here, no heavy cross-platform frameworks, it's just a native Mac app. Some apps require big upfront payments, and some even a monthly subscription – that's not worth it for just simple notes. That's why this app is completely free – as in beer, and as in speech. 
+Notes are awesome pieces of information, essential to our daily lives. It is important that taking notes is fast and easy. Simple .txts are great for this; however, sometimes it's useful to have some more formatting and a prettier interface. Markdown is a great solution. This app is really meant to be simple markdown editor; it has objectively less features than other programs on purpose. It is supposed to be light-weight, and really fast. It weighs in under 1 megabyte. There's no Electron here, no heavy cross-platform frameworks, it's just a native Mac app. Some apps require big upfront payments, and some even a monthly subscription – that's not worth it for just simple notes. That's why this app is completely free – as in beer, and as in speech. 
 
 ## Markdown in QuickNote
+> This project uses [MarkParse kit](https://github.com/daemonleaf/MarkParse) for parsing! MarkParse kit is a light, expandable, native framework to parse markdown. It was custom built for this app!
+
 Markdown is used a bit differently in QuickNote – not all features are implemented, and not all features will be implemented. If you write something in QuickNote, it will probably be supported by other apps. However, many documents written in other apps might not work here.
 
 **Markdown features implemented in QuickNote:**
@@ -26,7 +28,7 @@ Markdown is used a bit differently in QuickNote – not all features are impleme
 * Footnotes
 * Task lists
 
-**Markdown features that will never be implemented:**
+**Markdown features that will likely never be implemented:**
 * Images
 * Code syntax highlighting
 * Relative links
