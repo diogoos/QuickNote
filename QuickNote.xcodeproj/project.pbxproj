@@ -3,18 +3,17 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B53BC71B2A2CD10B00F21AD8 /* MarkParse in Frameworks */ = {isa = PBXBuildFile; productRef = B53BC71A2A2CD10B00F21AD8 /* MarkParse */; };
 		FD0FB06D253AF6D700F12CA5 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD0FB06C253AF6D700F12CA5 /* Coordinator.swift */; };
 		FD0FB070253AF75A00F12CA5 /* WindowCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD0FB06F253AF75A00F12CA5 /* WindowCoordinator.swift */; };
 		FD0FB073253AF78400F12CA5 /* Storyboarded.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD0FB072253AF78400F12CA5 /* Storyboarded.swift */; };
 		FD0FB077253AFBCF00F12CA5 /* ViewerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD0FB076253AFBCF00F12CA5 /* ViewerViewController.swift */; };
 		FD0FB07B253B076600F12CA5 /* SplitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD0FB07A253B076600F12CA5 /* SplitViewController.swift */; };
 		FD0FB082253B0FDF00F12CA5 /* NSWindow+Standard.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD0FB081253B0FDF00F12CA5 /* NSWindow+Standard.swift */; };
-		FD932BD62548D10A00AECC7E /* MarkParse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD932BD32548D0E900AECC7E /* MarkParse.framework */; };
-		FD932BD72548D10A00AECC7E /* MarkParse.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = FD932BD32548D0E900AECC7E /* MarkParse.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		FDA9C9EA254D77A800050C0C /* NoImageParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDA9C9E9254D77A800050C0C /* NoImageParser.swift */; };
 		FDA9C9ED254D782600050C0C /* NSRegularExpression.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDA9C9EC254D782600050C0C /* NSRegularExpression.swift */; };
 		FDDA0DA5253A436F00EAC9B7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDDA0DA4253A436F00EAC9B7 /* AppDelegate.swift */; };
@@ -24,16 +23,6 @@
 		FDDA0DAE253A437000EAC9B7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FDDA0DAC253A437000EAC9B7 /* Main.storyboard */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		FD932BD22548D0E900AECC7E /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = FD932BCE2548D0E900AECC7E /* MarkParse.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = FD2FB9312545C723004ED532;
-			remoteInfo = MarkParse;
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXCopyFilesBuildPhase section */
 		FD2FB9902546EA9E004ED532 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
@@ -41,7 +30,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				FD932BD72548D10A00AECC7E /* MarkParse.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -55,7 +43,6 @@
 		FD0FB076253AFBCF00F12CA5 /* ViewerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewerViewController.swift; sourceTree = "<group>"; };
 		FD0FB07A253B076600F12CA5 /* SplitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplitViewController.swift; sourceTree = "<group>"; };
 		FD0FB081253B0FDF00F12CA5 /* NSWindow+Standard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSWindow+Standard.swift"; sourceTree = "<group>"; };
-		FD932BCE2548D0E900AECC7E /* MarkParse.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = MarkParse.xcodeproj; path = ../../MarkParse/MarkParse.xcodeproj; sourceTree = "<group>"; };
 		FDA9C9E9254D77A800050C0C /* NoImageParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoImageParser.swift; sourceTree = "<group>"; };
 		FDA9C9EC254D782600050C0C /* NSRegularExpression.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSRegularExpression.swift; sourceTree = "<group>"; };
 		FDDA0DA1253A436F00EAC9B7 /* QuickNote.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QuickNote.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -73,7 +60,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FD932BD62548D10A00AECC7E /* MarkParse.framework in Frameworks */,
+				B53BC71B2A2CD10B00F21AD8 /* MarkParse in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -98,14 +85,6 @@
 				FDA9C9EC254D782600050C0C /* NSRegularExpression.swift */,
 			);
 			path = Extensions;
-			sourceTree = "<group>";
-		};
-		FD932BCF2548D0E900AECC7E /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				FD932BD32548D0E900AECC7E /* MarkParse.framework */,
-			);
-			name = Products;
 			sourceTree = "<group>";
 		};
 		FD932BD52548D10A00AECC7E /* Frameworks */ = {
@@ -135,7 +114,6 @@
 		FDDA0DA3253A436F00EAC9B7 /* QuickNote */ = {
 			isa = PBXGroup;
 			children = (
-				FD932BCE2548D0E900AECC7E /* MarkParse.xcodeproj */,
 				FD51466C253B615D00450AE5 /* Extensions */,
 				FD0FB084253B2DCA00F12CA5 /* Views */,
 				FDDA0DA4253A436F00EAC9B7 /* AppDelegate.swift */,
@@ -169,6 +147,9 @@
 			dependencies = (
 			);
 			name = QuickNote;
+			packageProductDependencies = (
+				B53BC71A2A2CD10B00F21AD8 /* MarkParse */,
+			);
 			productName = QuickNote;
 			productReference = FDDA0DA1253A436F00EAC9B7 /* QuickNote.app */;
 			productType = "com.apple.product-type.application";
@@ -196,30 +177,17 @@
 				Base,
 			);
 			mainGroup = FDDA0D98253A436F00EAC9B7;
+			packageReferences = (
+				B53BC7192A2CD10B00F21AD8 /* XCRemoteSwiftPackageReference "MarkParse" */,
+			);
 			productRefGroup = FDDA0DA2253A436F00EAC9B7 /* Products */;
 			projectDirPath = "";
-			projectReferences = (
-				{
-					ProductGroup = FD932BCF2548D0E900AECC7E /* Products */;
-					ProjectRef = FD932BCE2548D0E900AECC7E /* MarkParse.xcodeproj */;
-				},
-			);
 			projectRoot = "";
 			targets = (
 				FDDA0DA0253A436F00EAC9B7 /* QuickNote */,
 			);
 		};
 /* End PBXProject section */
-
-/* Begin PBXReferenceProxy section */
-		FD932BD32548D0E900AECC7E /* MarkParse.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = MarkParse.framework;
-			remoteRef = FD932BD22548D0E900AECC7E /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		FDDA0D9F253A436F00EAC9B7 /* Resources */ = {
@@ -469,6 +437,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		B53BC7192A2CD10B00F21AD8 /* XCRemoteSwiftPackageReference "MarkParse" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/diogoos/MarkParse";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.2.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		B53BC71A2A2CD10B00F21AD8 /* MarkParse */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B53BC7192A2CD10B00F21AD8 /* XCRemoteSwiftPackageReference "MarkParse" */;
+			productName = MarkParse;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = FDDA0D99253A436F00EAC9B7 /* Project object */;
 }
