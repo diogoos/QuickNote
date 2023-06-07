@@ -31,7 +31,7 @@ class ViewerViewController: NSViewController, Storyboarded {
         guard let note = representedObject as? QuickNote else { return }
 
         var parsers = MarkdownRenderer.defaultParsers
-        parsers.insert(NoImageParser(), at: 2)
+        parsers.insert(ImageParser(), at: 2)
 
         let parser = MarkdownRenderer(parsers: parsers)
         textView.textStorage!.setAttributedString(parser.attributedString(from: note.text))

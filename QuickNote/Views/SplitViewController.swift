@@ -47,7 +47,7 @@ extension SplitViewController: NSTextViewDelegate {
         // parse markdown only if the text has changed
         if viewerText != editorTextView.string {
             var parsers = MarkdownRenderer.defaultParsers
-            parsers.insert(NoImageParser(), at: 2)
+            parsers.insert(ImageParser(enabled: false), at: 2)
 
             let renderer = MarkdownRenderer(parsers: parsers)
             viewerTextView.textStorage!.setAttributedString(renderer.attributedString(from: editorTextView.string))
